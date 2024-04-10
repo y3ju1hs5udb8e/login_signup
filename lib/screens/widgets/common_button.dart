@@ -3,7 +3,7 @@ import 'package:form_ui/core/themes.dart';
 
 class CommonButton extends StatelessWidget {
   final String text;
-  final VoidCallback func;
+  final Function()? func;
   const CommonButton({
     super.key,
     required this.func,

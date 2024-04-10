@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:form_ui/core/size.dart';
 import 'package:form_ui/core/themes.dart';
+import 'package:form_ui/screens/sign_up_screen.dart';
 import 'package:form_ui/screens/widgets/common_button.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -17,7 +18,6 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _passwordController = TextEditingController();
 
   final obScureText = true;
-  final isVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -148,7 +148,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                 .copyWith(color: AppColor.textPrimary),
                           ),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                  builder: (context) => const SignUpScreen(),
+                                ),
+                              );
+                            },
                             child: Text(
                               'Sign up',
                               style: ThemeText.paragraphLight
